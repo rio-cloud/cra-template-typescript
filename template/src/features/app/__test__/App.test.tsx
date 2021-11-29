@@ -44,7 +44,7 @@ describe('Test App', () => {
         const { container } = renderWithRouter(<App />);
 
         const element = container.firstChild as HTMLElement;
-        expect(element.classList).toContain('Trustdeck');
+        expect(element.classList).toContain('StarterTemplate');
     });
 });
 
