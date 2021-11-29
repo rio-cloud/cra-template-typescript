@@ -1,5 +1,5 @@
 {
-    "starterTemplate.moduleName": "Starter App",
-    "starterTemplate.sublink.more": "Mehr",
-    "starterTemplate.sublink.intro": "Einleitung"
+    "intl-msg:starterTemplate.moduleName": "Starter App",
+    "intl-msg:starterTemplate.sublink.more": "Mehr",
+    "intl-msg:starterTemplate.sublink.intro": "Einleitung"
 }
