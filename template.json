@@ -51,7 +51,7 @@
             "lint-staged": "^10.5.4",
             "node-env-run": "^4.0.2",
             "nodemon": "^2.0.14",
-            "prettier": "^2.4.1",
+            "prettier": "^2.5.0",
             "react-app-rewired": "^2.1.8",
             "redux-devtools-extension": "^2.13.9",
             "source-map-explorer": "^2.5.2",
