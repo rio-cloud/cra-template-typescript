@@ -8,7 +8,6 @@ import {
     WebStorageStateStore,
 } from 'oidc-client';
 import join from 'lodash/fp/join';
-import getOr from 'lodash/fp/getOr';
 import { mapUserProfile } from './userProfile';
 import { config } from '../../config';
 import { OAuthConfig } from '..';
@@ -48,9 +47,10 @@ export const createUserManager = () => {
     const settings = {
         authority: `${config.login.authority}`,
         client_id: `${config.login.clientId}`,
+        client_secret: `${config.login.clientId}`,
         loadUserInfo: false,
         redirect_uri: `${redirectUri}`,
-        response_type: 'id_token token',
+        response_type: 'code',
         scope: join(' ', config.login.oauthScope),
         silent_redirect_uri: `${silentRedirectUri || redirectUri}`,
         includeIdTokenInSilentRenew: false,
