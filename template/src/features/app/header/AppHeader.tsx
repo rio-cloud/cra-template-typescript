@@ -1,5 +1,5 @@
 import { FormattedMessage } from 'react-intl';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import { DefaultUserMenu } from '@rio-cloud/rio-user-menu-component';
 import ApplicationHeader from '@rio-cloud/rio-uikit/lib/es/ApplicationHeader';
@@ -37,7 +37,7 @@ const AppHeader = () => {
         <ApplicationHeader
             label={<FormattedMessage id={'intl-msg:starterTemplate.moduleName'} />}
             appNavigator={<IframeResizer className={'iFrameResizer'} src={config.backend.MENU_SERVICE} />}
-            homeRoute={<NavLink to={config.homeRoute || ''} />}
+            homeRoute={<Link to={config.homeRoute || ''} />}
             navItems={navItems}
             actionBarItems={[serviceInfoItem, userMenuItem]}
         />
