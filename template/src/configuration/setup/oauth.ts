@@ -20,7 +20,7 @@ const saveCurrentRoute = () => {
 };
 
 export const attemptInitialSignIn = async (userManager: UserManager) => {
-    const isFreshRedirect = Boolean(param(window, /access_token=([^&]+)/u));
+    const isFreshRedirect = Boolean(param(window, /.*code=([^&]+)/u));
 
     try {
         const user = await userManager.signinSilent();
@@ -30,7 +30,7 @@ export const attemptInitialSignIn = async (userManager: UserManager) => {
 
         if (initialRoute && isFreshRedirect) {
             trace(`Go to location "/${initialRoute}"`);
-            window.location.href = `#/${initialRoute}`;
+            history.replace(`#/${initialRoute}`);
         }
 
         routeStorage.discardRoute();
