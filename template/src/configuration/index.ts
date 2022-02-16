@@ -60,8 +60,8 @@ export const main = async (renderApp: Function) => {
             ? configureMockUserManager(oauthConfig)
             : configureUserManager(oauthConfig, createUserManager());
 
-    document.addEventListener('EVENT_USER_LANGUAGE_CHANGED', userManager.signinSilent.bind(userManager));
-    document.addEventListener('EVENT_USER_PROFILE_CHANGED', userManager.signinSilent.bind(userManager));
+    document.addEventListener('rio.core.user.language.changed', userManager.signinSilent.bind(userManager));
+    document.addEventListener('rio.core.user.profile.changed', userManager.signinSilent.bind(userManager));
 
     try {
         await userManager.clearStaleState();
