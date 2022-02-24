@@ -11,6 +11,7 @@ import { accessTokenStored, idTokenStored } from './tokenHandling/tokenSlice';
 import { userProfileObtained, userSessionExpired, userSessionRenewed } from './login/loginSlice';
 import { getLocale } from './lang/langSlice';
 import { UserManager } from 'oidc-client';
+import { EVENT_USER_LANGUAGE_CHANGED, EVENT_USER_PROFILE_CHANGED } from '@rio-cloud/rio-user-menu-component';
 
 export interface OAuthConfig {
     onSessionExpired: Function;
@@ -60,8 +61,8 @@ export const main = async (renderApp: Function) => {
             ? configureMockUserManager(oauthConfig)
             : configureUserManager(oauthConfig, createUserManager());
 
-    document.addEventListener('rio.core.user.language.changed', userManager.signinSilent.bind(userManager));
-    document.addEventListener('rio.core.user.profile.changed', userManager.signinSilent.bind(userManager));
+    document.addEventListener(EVENT_USER_LANGUAGE_CHANGED, userManager.signinSilent.bind(userManager));
+    document.addEventListener(EVENT_USER_PROFILE_CHANGED, userManager.signinSilent.bind(userManager));
 
     try {
         await userManager.clearStaleState();
