@@ -4,7 +4,7 @@
             "@reduxjs/toolkit": "^1.6.2",
             "@rio-cloud/rio-session-expired-info": "0.9.7",
             "@rio-cloud/rio-uikit": "0.15.1",
-            "@rio-cloud/rio-user-menu-component": "1.0.9",
+            "@rio-cloud/rio-user-menu-component": "1.2.0",
             "@sentry/browser": "6.15.0",
             "iframe-resizer-react": "^1.1.0",
             "lodash": "^4.17.21",
