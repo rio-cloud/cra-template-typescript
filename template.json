@@ -97,7 +97,8 @@
             "moduleNameMapper": {
                 "ReactDOM": "react-dom"
             },
-            "moduleDirectories": ["node_modules", "mocks"]
+            "moduleDirectories": ["node_modules", "mocks"],
+            "reporters": ["default", "jest-junit"]
         },
         "jest-junit": {
             "outputDirectory": "./results/jest"
