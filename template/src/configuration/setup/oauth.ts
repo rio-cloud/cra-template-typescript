@@ -30,7 +30,7 @@ export const attemptInitialSignIn = async (userManager: UserManager) => {
 
         if (initialRoute && isFreshRedirect) {
             trace(`Go to location "/${initialRoute}"`);
-            history.replaceState(null, '', `#/${initialRoute}`);
+            window.location.replace(`#/${initialRoute}`);
         }
 
         routeStorage.discardRoute();
