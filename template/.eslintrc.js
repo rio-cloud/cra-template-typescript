@@ -111,9 +111,10 @@ module.exports = {
         'id-match': 'error',
         'import/no-extraneous-dependencies': 'off',
         'import/order': 'off',
+        curly: 'warn',
         'max-classes-per-file': 'off',
         'max-len': [
-            'error',
+            'warn',
             {
                 code: 120,
                 ignoreUrls: true,
@@ -175,7 +176,7 @@ module.exports = {
         'no-undef-init': 'error',
         'no-underscore-dangle': 'error',
         'no-unsafe-finally': 'error',
-        'no-unused-expressions': 'error',
+        'no-unused-expressions': ['error', { 'allowShortCircuit': true }],
         'no-unused-labels': 'error',
         'no-unexpected-multiline': 'off',
         'no-use-before-define': 'off',
