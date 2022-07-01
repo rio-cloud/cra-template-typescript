@@ -33,6 +33,15 @@ export const attemptInitialSignIn = async (userManager: UserManager) => {
             window.location.replace(`#/${initialRoute}`);
         }
 
+        // Remove oauth related query params. These are not needed after login and should not be shown
+        const queryParams = new URLSearchParams(window.location.search);
+        if (queryParams.has('code') || queryParams.has('state') || queryParams.has('session_state')) {
+            queryParams.delete('code');
+            queryParams.delete('state');
+            queryParams.delete('session_state');
+            window.location.search = queryParams.toString();
+        }
+
         routeStorage.discardRoute();
         return await Promise.resolve(user);
     } catch (error) {
