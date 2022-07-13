@@ -1,5 +1,5 @@
 import omit from 'lodash/fp/omit';
-import { Profile } from 'oidc-client';
+import { UserProfile as Profile } from 'oidc-client-ts';
 import { UserProfile } from './loginSlice';
 
 const stripSnakeProps = omit(['family_name', 'given_name']);

@@ -10,7 +10,7 @@ import { store } from './setup/store';
 import { accessTokenStored, idTokenStored } from './tokenHandling/tokenSlice';
 import { userProfileObtained, userSessionExpired, userSessionRenewed } from './login/loginSlice';
 import { getLocale } from './lang/langSlice';
-import { UserManager } from 'oidc-client';
+import { UserManager } from 'oidc-client-ts';
 import { EVENT_USER_LANGUAGE_CHANGED, EVENT_USER_PROFILE_CHANGED } from '@rio-cloud/rio-user-menu-component';
 
 export interface OAuthConfig {
@@ -61,8 +61,9 @@ export const main = async (renderApp: Function) => {
             ? configureMockUserManager(oauthConfig)
             : configureUserManager(oauthConfig, createUserManager());
 
-    document.addEventListener(EVENT_USER_LANGUAGE_CHANGED, userManager.signinSilent.bind(userManager));
-    document.addEventListener(EVENT_USER_PROFILE_CHANGED, userManager.signinSilent.bind(userManager));
+    const signinSilent = userManager.signinSilent.bind(userManager);
+    document.addEventListener(EVENT_USER_LANGUAGE_CHANGED, () => signinSilent());
+    document.addEventListener(EVENT_USER_PROFILE_CHANGED, () => signinSilent());
 
     try {
         await userManager.clearStaleState();

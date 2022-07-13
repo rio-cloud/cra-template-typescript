@@ -1,12 +1,5 @@
 /* eslint-disable camelcase, no-console */
-import {
-    InMemoryWebStorage,
-    Profile,
-    User,
-    UserManager,
-    UserSettings,
-    WebStorageStateStore,
-} from 'oidc-client';
+import { UserProfile as Profile, User, UserManager, WebStorageStateStore, InMemoryWebStorage } from 'oidc-client-ts';
 import join from 'lodash/fp/join';
 import { mapUserProfile } from './userProfile';
 import { config } from '../../config';
@@ -33,7 +26,7 @@ export interface SessionRenewedResult {
     locale: string;
 }
 
-export const adaptPublishedInfo = (result: UserSettings): SessionRenewedResult => ({
+export const adaptPublishedInfo = (result: any): SessionRenewedResult => ({
     accessToken: result.access_token,
     idToken: result.profile,
     locale: result.profile?.locale ?? 'en-GB',
@@ -64,7 +57,7 @@ export const createUserManager = () => {
 
 export const configureUserManager = (oauthConfig: OAuthConfig, userManager: UserManager) => {
     userManager.events.addUserLoaded((user) => {
-        oauthConfig.onSessionRenewed(adaptPublishedInfo(user as UserSettings));
+        oauthConfig.onSessionRenewed(adaptPublishedInfo(user));
     });
 
     userManager.events.addUserUnloaded(() => {
@@ -86,7 +79,7 @@ export const configureMockUserManager = (oauthConfig: OAuthConfig): UserManager 
     console.warn('[configuration/login/oidc-session] Using mocked authorization due to config setting');
 
     const signinSilent = () => {
-        const userSettings: UserSettings = {
+        const userSettings = {
             access_token: 'valid-mocked-oauth-bogus-token',
             profile: {
                 iss: 'Issuer Identifier',
