@@ -8,7 +8,7 @@
             "@sentry/browser": "6.19.2",
             "iframe-resizer-react": "^1.1.0",
             "lodash": "^4.17.21",
-            "oidc-client": "^1.11.5",
+            "oidc-client-ts": "^2.0.5",
             "qs": "6.10.2",
             "react": "^17.0.2",
             "react-app-polyfill": "^3.0.0",

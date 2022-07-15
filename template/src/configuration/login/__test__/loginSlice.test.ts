@@ -2,7 +2,6 @@ import { store } from '../../setup/store';
 import { userSessionExpired, userSessionRenewed } from '../loginSlice';
 
 describe('configuration/login/loginSlice', () => {
-
     it('should bring a sensible initial state to the table', () => {
         const expectedInitialState = {
             hasUserSessionEverExpired: false,

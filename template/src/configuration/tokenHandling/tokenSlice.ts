@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Profile } from 'oidc-client';
+import { UserProfile as Profile } from 'oidc-client-ts';
 
 import type { RootState } from '../../configuration/setup/store';
 
@@ -26,7 +26,7 @@ const tokenSlice = createSlice({
         },
         idTokenStored: (state, action: PayloadAction<Profile>) => {
             state.idToken = action.payload;
-        }
+        },
     },
 });
 
