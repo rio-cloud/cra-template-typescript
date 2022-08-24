@@ -6,18 +6,18 @@ import { SessionExpiredDialog } from '@rio-cloud/rio-session-expired-info';
 import ApplicationLayout from '@rio-cloud/rio-uikit/lib/es/ApplicationLayout';
 import NotificationsContainer from '@rio-cloud/rio-uikit/lib/es/NotificationsContainer';
 
-import { DEFAULT_LOCALE } from '../../configuration/lang/lang';
-import { isUserSessionExpired } from '../../configuration/login/loginSlice';
-import { useAppDispatch, useAppSelector } from '../../configuration/setup/hooks';
-import { getDisplayMessages, getLocale } from '../../configuration/lang/langSlice';
-import { DEFAULT_ROUTE, ROUTE_MORE } from './routes/routes';
-import DefaultRedirect from './routes/DefaultRedirect';
-import RouteUpdater from './routes/RouteUpdater';
+import { DEFAULT_LOCALE } from '../configuration/lang/lang';
+import { isUserSessionExpired } from '../configuration/login/loginSlice';
+import { useAppDispatch, useAppSelector } from '../configuration/setup/hooks';
+import { getDisplayMessages, getLocale } from '../configuration/lang/langSlice';
+import { DEFAULT_ROUTE, ROUTE_MORE } from '../routes/routes';
+import DefaultRedirect from '../routes/DefaultRedirect';
+import RouteUpdater from '../routes/RouteUpdater';
 
 import { getSessionExpiredAcknowledged, hideSessionExpiredDialog } from './appSlice';
-import AppHeader from './header/AppHeader';
-import Intro from './Intro';
-import More from './More';
+import AppHeader from '../features/header/AppHeader';
+import Intro from '../pages/Intro';
+import More from '../pages/More';
 
 const App = () => {
     const dispatch = useAppDispatch();

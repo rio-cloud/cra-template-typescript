@@ -1,4 +1,4 @@
-import './polyfills';
+import './utils/polyfills';
 
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -8,8 +8,8 @@ import { config } from './config';
 import { main } from './configuration';
 import { store } from './configuration/setup/store';
 import { handleLoginRedirect } from './configuration/login/redirect';
-import { ErrorBoundary } from './features/app/ErrorBoundary';
-import App from './features/app/App';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import App from './layout//App';
 
 const renderApplication = () => {
     const root = document.getElementById('root');

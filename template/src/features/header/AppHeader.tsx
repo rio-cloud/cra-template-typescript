@@ -6,7 +6,7 @@ import { RioNotifications } from '@rio-cloud/rio-notifications-component';
 import ApplicationHeader from '@rio-cloud/rio-uikit/lib/es/ApplicationHeader';
 import IframeResizer from 'iframe-resizer-react';
 
-import { config } from '../../../config';
+import { config } from '../../config';
 import ServiceInfo from './ServiceInfo';
 
 const AppHeader = () => {

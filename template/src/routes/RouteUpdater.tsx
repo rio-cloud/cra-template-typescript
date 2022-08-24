@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { makeRoute, parseRoute } from './routes';
 import { useRouteState, useUpdateRoute } from './routeHooks';
-import { useAppDispatch, useAppSelector } from '../../../configuration/setup/hooks';
+import { useAppDispatch, useAppSelector } from '../configuration/setup/hooks';
 // import { getSelectedMyId, getSelectedAnotherId, mySomethingSelected, anotherThingSelected } from '../appSlice';
 
 const RouteUpdater = () => {
