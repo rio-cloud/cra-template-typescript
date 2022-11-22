@@ -1,3 +1,8 @@
+# DEPRECATED
+This project is deprecated and will not be maintained further. Create-React-App has reached it's end of live with the outdated and slow build setup using webpack.
+
+For starting a new Frontend project, please use the [vite-rio-template](https://github.com/rio-cloud/vite-rio-template) instead.
+
 # rio-template-typescript
 
 This is the RIO TypeScript template for [Create React App](https://github.com/facebook/create-react-app).
